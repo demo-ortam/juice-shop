@@ -23,3 +23,4 @@ jobs:
       uses: anchore/sbom-action@v0.15.11
       with:
         image: batu:latest
+        artifact-name: batu_latest_sbom
