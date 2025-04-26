@@ -18,13 +18,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag batu:latest
 
-    - name: Anchore SBOM Action
-      uses: anchore/sbom-action@v0.15.11
-      with:
-        image: "batu:latest"
-        output-file: sbom.json
-        format: spdx-json
-
     - name: semgrep-action
       uses: semgrep/semgrep-action@v1
       with:
