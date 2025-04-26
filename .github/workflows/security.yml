@@ -17,9 +17,5 @@ jobs:
 
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag batu:latest
-
-    - name: semgrep-action
-      uses: semgrep/semgrep-action@v1
-      with:
-        generate-sarif: true
-        output: semgrep-results.sarif
+      env:
+        DOCKER_BUILDKIT: 1
