@@ -21,11 +21,12 @@ jobs:
     - name: Anchore SBOM Action
       uses: anchore/sbom-action@v0.15.11
       with:
-        image: batu:latest
-        artifact-name: batu-latest-sbom
+        image: "batu:latest"
+        output-file: sbom.json
+        format: spdx-json
 
-    - name: Upload SBOM Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: batu-latest-sbom
-        path: ./sbom/**/*
+    - name: semgrep-action
+  # You may pin to the exact commit or the version.
+  # uses: semgrep/semgrep-action@713efdd345f3035192eaa63f56867b88e63e4e5d
+      uses: semgrep/semgrep-action@v1
+
